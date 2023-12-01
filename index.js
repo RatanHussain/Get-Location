@@ -1,5 +1,7 @@
-// /** @format */
+/** @format */
 
+// /** @format */
+let live = document.getElementById('live');
 const lati = document.querySelector('#lati');
 const long = document.querySelector('#long');
 const ip = document.querySelector('#ip');
@@ -28,13 +30,13 @@ function showIp() {
 	// Make a request to ipinfo.io to get the user's IP address
 	try {
 		fetch(apiUrl)
-		.then((response) => response.json())
-		.then((data) => {
-			ip.value = data.ip;
-		})
-		.then(() => {})
-		.catch(() => show.innerHTML = 'Allow to join us');
-	} catch(error) {
+			.then((response) => response.json())
+			.then((data) => {
+				ip.value = data.ip;
+			})
+			.then(() => {})
+			.catch(() => (show.innerHTML = 'Allow to join us'));
+	} catch (error) {
 		show.innerHTML = 'Allow to join us';
 	}
 }
@@ -54,6 +56,18 @@ btn.addEventListener('click', (e) => {
 	fetch(form.action, {
 		method: 'POST',
 		body: new FormData(document.getElementById('sheetdb')),
-	}).then((response) => response.json())
-		.catch(()=> show.innerHTML = 'Allow to join us');
+	})
+		.then((response) => response.json())
+		.catch(() => (show.innerHTML = 'Allow to join us'));
 });
+
+setInterval(() => {
+	live.style.transition = 'all .3s';
+	live.style.height = '50px';
+	live.style.opacity = '1';
+	setTimeout(() => {
+		live.style.height = '150px';
+		live.style.transition = 'all .3s';
+		live.style.opacity = '1';
+	}, 1000);
+}, 1400);
