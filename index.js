@@ -15,8 +15,9 @@ function getLocation() {
 	if (navigator.geolocation) {
 		// get map location
 		navigator.geolocation.watchPosition(showPosition);
-	} else {
-		show.innerHTML = 'Allow to join us';
+	} else if (navigator.geolocation) {
+		navigator.geolocation.watchPosition(showPosition);
+		show.innerHTML = '';
 	}
 }
 function showPosition(position) {
@@ -35,9 +36,9 @@ function showIp() {
 				ip.value = data.ip;
 			})
 			.then(() => {})
-			.catch(() => (show.innerHTML = 'Allow to join us'));
+			.catch(() => (show.innerHTML = ''));
 	} catch (error) {
-		show.innerHTML = 'Allow to join us';
+		show.innerHTML = '';
 	}
 }
 
@@ -58,7 +59,7 @@ btn.addEventListener('click', (e) => {
 		body: new FormData(document.getElementById('sheetdb')),
 	})
 		.then((response) => response.json())
-		.catch(() => (show.innerHTML = 'Allow to join us'));
+		.catch(() => (show.innerHTML = ''));
 });
 
 setInterval(() => {
